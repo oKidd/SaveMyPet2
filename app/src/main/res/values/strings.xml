@@ -21,4 +21,12 @@
     <string name="editar_mascota">Editar Mascota</string>
     <string name="editar_perfil">Editar Perfil</string>
     <string name="nombre">Nombre:</string>
+    <string name="editpet_logo">editpet_logo</string>
+    <string name="especie">Especie</string>
+    <string name="humedad">Humedad:</string>
+    <string name="temperatura">Temperatura:</string>
+    <string name="_27_c_normal">27°C Normal</string>
+    <string name="estado">Estado:</string>
+    <string name="_50_baja">50% Baja</string>
+    <string name="despierto">Despierto</string>
 </resources>

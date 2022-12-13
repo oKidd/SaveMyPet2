@@ -2,6 +2,7 @@ package com.savemypet.savemypet2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -98,5 +99,11 @@ public class AgregarMascota extends AppCompatActivity {
         databaseReference.child("Mascota").child(pet.getId()).setValue(pet);
         Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
 
+    }
+
+    public void irAHome(View v){
+        finish();
+        Intent iHome = new Intent(AgregarMascota.this, Home.class);
+        startActivity(iHome);
     }
 }

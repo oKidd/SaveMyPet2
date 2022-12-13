@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/menu_title"
+        android:id="@+id/nombreMascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/pacifico"
@@ -35,6 +35,7 @@
         android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/boton_perfil"
+        android:onClick="irAPerfil"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -125,6 +126,7 @@
         android:layout_marginStart="60dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/boton_notificaciones"
+        android:onClick="irANotificaciones"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -138,6 +140,7 @@
         android:layout_marginEnd="60dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/boton_editar"
+        android:onClick="irAConfiguraciones"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

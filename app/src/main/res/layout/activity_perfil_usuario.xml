@@ -100,7 +100,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/menu_title"
+        android:id="@+id/nombreMascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
@@ -121,6 +121,7 @@
         android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/boton_opciones"
+        android:onClick="irAHome"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -168,6 +169,7 @@
         android:clickable="true"
         android:contentDescription="@string/boton_agregar"
         android:focusable="true"
+        android:onClick="addMascota"
         app:backgroundTint="#FF7F3A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

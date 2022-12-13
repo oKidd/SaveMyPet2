@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -46,6 +47,21 @@ public class Home extends AppCompatActivity {
         listaMascota = new ArrayList<>();
         iniciarFirebase();
         listarMascotas();
+
+        lvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(Home.this, VerMascota.class);
+                mascotaSeleccionada = (Mascota) adapterView.getItemAtPosition(i);
+
+                intent.putExtra("nombre", mascotaSeleccionada.getNombre());
+                intent.putExtra("temp", mascotaSeleccionada.getEspecie().getMinTemperatura());
+                intent.putExtra("humedad", mascotaSeleccionada.getEspecie().getMinHumedad());
+                intent.putExtra("estado", "Despierto");
+
+                startActivity(intent);
+            }
+        });
     }
 
     private void listarMascotas() {
@@ -96,5 +112,18 @@ public class Home extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Debe iniciar sesion", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void irAPerfil(View v){
+        Intent iPerfil = new Intent(Home.this, PerfilUsuario.class);
+        startActivity(iPerfil);
+    }
+
+    public void irANotificaciones(View v){
+        Toast.makeText(this, "Proximamente", Toast.LENGTH_LONG).show();
+    }
+
+    public void irAConfiguraciones(View v){
+        Toast.makeText(this, "Proximamente", Toast.LENGTH_LONG).show();
     }
 }

@@ -56,7 +56,7 @@
 
     <View
         android:id="@+id/divider_up"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="60dp"
         android:background="?android:attr/listDivider"
@@ -133,8 +133,7 @@
     <ListView
         android:id="@+id/lista_notificaciones"
         android:layout_width="wrap_content"
-        android:layout_height="642dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"

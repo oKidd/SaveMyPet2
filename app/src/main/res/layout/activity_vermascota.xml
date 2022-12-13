@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".VerMascota">
 
+    <Button
+        android:id="@+id/pet_button"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#FF7F3A"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/editar_mascota"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_estado"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"
+        tools:text="Editar Mascota" />
+
     <TextView
         android:id="@+id/pet_estadotext"
         android:layout_width="150dp"
@@ -35,24 +53,6 @@
         app:layout_constraintHorizontal_bias="0.793"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pet_temptext" />
-
-    <Button
-        android:id="@+id/profile_button2"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="100dp"
-        android:backgroundTint="#FF7F3A"
-        android:fontFamily="@font/quicksand"
-        android:text="@string/registrarse_title"
-        android:textAllCaps="false"
-        android:textSize="24sp"
-        app:cornerRadius="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_estado"
-        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"
-        tools:text="Editar Perfil" />
 
     <TextView
         android:id="@+id/pet_estado"
@@ -187,7 +187,7 @@
 
     <View
         android:id="@+id/divider_up"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="60dp"
         android:background="?android:attr/listDivider"
@@ -208,7 +208,7 @@
 
     <View
         android:id="@+id/divider_down"
-        android:layout_width="409dp"
+        android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginBottom="60dp"
         android:background="?android:attr/listDivider"
@@ -221,15 +221,14 @@
         android:id="@+id/menu_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginBottom="30dp"
         android:clickable="true"
         android:contentDescription="@string/boton_agregar"
         android:focusable="true"
         app:backgroundTint="#FF7F3A"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/divider_down"
-        app:layout_constraintTop_toTopOf="@+id/menu_down"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/plus_math"
         tools:ignore="ImageContrastCheck" />
 

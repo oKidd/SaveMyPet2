@@ -18,4 +18,7 @@
     <string name="email_login">Email</string>
     <string name="clave_login">Clave</string>
     <string name="login_logo">login_logo</string>
+    <string name="editar_mascota">Editar Mascota</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="nombre">Nombre:</string>
 </resources>

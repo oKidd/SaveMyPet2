@@ -13,6 +13,7 @@
         android:layout_marginTop="56dp"
         android:backgroundTint="#FF7F3A"
         android:fontFamily="@font/quicksand"
+        android:onClick="registrarUsuario"
         android:text="@string/registrarse_title"
         android:textAllCaps="false"
         android:textSize="24sp"

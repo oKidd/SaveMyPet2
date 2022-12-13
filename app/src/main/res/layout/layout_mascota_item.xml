@@ -54,11 +54,17 @@
         android:id="@+id/textView5"
         android:layout_width="65dp"
         android:layout_height="23dp"
+        android:layout_marginStart="266dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="73dp"
         android:text="24 C°"
         android:textColor="#27C52D"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="84dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"

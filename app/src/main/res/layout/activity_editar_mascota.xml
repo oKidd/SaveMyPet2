@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditarMascota">
+
+    <SeekBar
+        android:id="@+id/maxTemp5"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="208dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF7F3A"
+        android:backgroundTintMode="screen"
+        android:max="50"
+        android:progress="15"
+        android:progressTint="#FF7F3A"
+        android:thumbTint="#FF7F3A"
+        app:layout_constraintStart_toEndOf="@+id/editpet_maxtemp"
+        app:layout_constraintTop_toBottomOf="@+id/minTemp"
+        app:tickMarkTint="#FF7F3A" />
+
+    <SeekBar
+        android:id="@+id/minHum"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="208dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF7F3A"
+        android:backgroundTintMode="screen"
+        android:max="50"
+        android:progress="15"
+        android:progressTint="#FF7F3A"
+        android:thumbTint="#FF7F3A"
+        app:layout_constraintStart_toEndOf="@+id/editpet_minhum"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_humedad"
+        app:tickMarkTint="#FF7F3A" />
+
+    <TextView
+        android:id="@+id/editpet_minhum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Min: "
+        android:textColor="#FF7F3A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_humedad" />
+
+    <TextView
+        android:id="@+id/editpet_humedad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Humedad:"
+        android:textColor="#FF7F3A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_maxtemp" />
+
+    <SeekBar
+        android:id="@+id/maxHum"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="208dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF7F3A"
+        android:backgroundTintMode="screen"
+        android:max="50"
+        android:progress="15"
+        android:progressTint="#FF7F3A"
+        android:thumbTint="#FF7F3A"
+        app:layout_constraintStart_toEndOf="@+id/editpet_maxhum"
+        app:layout_constraintTop_toBottomOf="@+id/minHum"
+        app:tickMarkTint="#FF7F3A" />
+
+    <TextView
+        android:id="@+id/editpet_mintemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Min: "
+        android:textColor="#FF7F3A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_temp" />
+
+    <TextView
+        android:id="@+id/editpet_maxtemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Max:"
+        android:textColor="#FF7F3A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_mintemp" />
+
+    <TextView
+        android:id="@+id/editpet_maxhum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Max:"
+        android:textColor="#FF7F3A"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.252"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_minhum" />
+
+    <TextView
+        android:id="@+id/editpet_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/quicksand"
+        android:text="Temperatura:"
+        android:textColor="#FF7F3A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_username2" />
+
+    <ImageView
+        android:id="@+id/petedit_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="editpet_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_up"
+        app:srcCompat="@drawable/pets" />
+
+    <EditText
+        android:id="@+id/edit_username2"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:backgroundTint="#FF7F3A"
+        android:ems="10"
+        android:fontFamily="@font/quicksand"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#FF7F3A"
+        android:textColorHint="#FF7F3A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petedit_logo"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/edit_button2"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#FF7F3A"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/registrarse_title"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maxHum"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"
+        tools:text="Guardar Cambios" />
+
+    <View
+        android:id="@+id/menu_up"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pacifico"
+        android:text="@string/mis_mascotas"
+        android:textColor="#FF7F3A"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/divider_up"
+        app:layout_constraintEnd_toStartOf="@+id/menu_profile"
+        app:layout_constraintStart_toEndOf="@+id/menu_back"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        tools:text="Editar Mascota" />
+
+    <ImageButton
+        android:id="@+id/menu_profile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/boton_perfil"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_male_circle"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/menu_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/boton_opciones"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/left"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+
+    <View
+        android:id="@+id/divider_up"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="60dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/menu_down"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divider_down"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="60dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/menu_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="644dp"
+        android:clickable="true"
+        android:contentDescription="@string/boton_agregar"
+        android:focusable="true"
+        app:backgroundTint="#FF7F3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/divider_down"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/plus_math"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/menu_notifications"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="60dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/boton_notificaciones"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/jingle"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/menu_options"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="60dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/boton_editar"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/menu"
+        tools:ignore="ImageContrastCheck" />
+
+    <SeekBar
+        android:id="@+id/minTemp"
+        style="@style/Widget.AppCompat.SeekBar.Discrete"
+        android:layout_width="208dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FF7F3A"
+        android:backgroundTintMode="screen"
+        android:max="50"
+        android:progress="15"
+        android:progressTint="#FF7F3A"
+        android:thumbTint="#FF7F3A"
+        app:layout_constraintStart_toEndOf="@+id/editpet_mintemp"
+        app:layout_constraintTop_toBottomOf="@+id/editpet_temp"
+        app:tickMarkTint="#FF7F3A" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    tools:context=".Register">
 
     <Button
         android:id="@+id/register_button"
@@ -13,14 +13,15 @@
         android:layout_marginTop="56dp"
         android:backgroundTint="#FF7F3A"
         android:fontFamily="@font/quicksand"
-        android:text="Registrarse"
+        android:text="@string/registrarse_title"
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_pass" />
+        app:layout_constraintTop_toBottomOf="@+id/register_pass"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
         android:id="@+id/register_email"
@@ -30,7 +31,7 @@
         android:backgroundTint="#FF7F3A"
         android:ems="10"
         android:fontFamily="@font/quicksand"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColor="#FF7F3A"
         android:textColorHint="#FF7F3A"
@@ -38,7 +39,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_username" />
+        app:layout_constraintTop_toBottomOf="@+id/register_username"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/register_pass"
@@ -48,7 +51,7 @@
         android:backgroundTint="#FF7F3A"
         android:ems="10"
         android:fontFamily="@font/quicksand"
-        android:hint="Clave"
+        android:hint="@string/clave"
         android:inputType="textEmailAddress"
         android:textColor="#FF7F3A"
         android:textColorHint="#FF7F3A"
@@ -56,25 +59,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/register_phone"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/register_phone"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="25dp"
+        android:autofillHints=""
         android:backgroundTint="#FF7F3A"
         android:ems="10"
         android:fontFamily="@font/quicksand"
-        android:hint="Telefono"
-        android:inputType="number"
+        android:hint="@string/telefono"
+        android:inputType="number|phone"
         android:textColor="#FF7F3A"
         android:textColorHint="#FF7F3A"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_email" />
+        app:layout_constraintTop_toBottomOf="@+id/register_email"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/register_username"
@@ -84,7 +91,7 @@
         android:backgroundTint="#FF7F3A"
         android:ems="10"
         android:fontFamily="@font/quicksand"
-        android:hint="Nombre de Usuario"
+        android:hint="@string/nombre_de_usuario"
         android:inputType="text"
         android:textColor="#FF7F3A"
         android:textColorHint="#FF7F3A"
@@ -92,7 +99,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/register_title"
@@ -103,21 +112,24 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="20"
-        android:text="Registrarse"
+        android:text="@string/registrarse"
         android:textColor="#FF7F3A"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="52dp"
+        android:contentDescription="@string/logo_registro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hamster" />
+        app:srcCompat="@drawable/hamster"
+        tools:ignore="ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <Button
         android:id="@+id/login_button"
@@ -13,14 +13,15 @@
         android:layout_marginTop="52dp"
         android:backgroundTint="#FF7F3A"
         android:fontFamily="@font/quicksand"
-        android:text="Iniciar Sesion"
+        android:text="@string/iniciar_sesion"
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_pass" />
+        app:layout_constraintTop_toBottomOf="@+id/login_pass"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/login_title"
@@ -31,26 +32,29 @@
         android:shadowDx="1"
         android:shadowDy="1"
         android:shadowRadius="20"
-        android:text="Iniciar\n    Sesion"
+        android:text="@string/iniciar_n_sesion"
         android:textColor="#FF7F3A"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
     <ImageView
         android:id="@+id/login_logo"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="104dp"
+        android:contentDescription="@string/login_logo"
         android:rotation="0"
         android:rotationY="180"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.759"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lizard" />
+        app:srcCompat="@drawable/lizard"
+        tools:ignore="ImageContrastCheck" />
 
     <EditText
         android:id="@+id/login_email"
@@ -60,7 +64,7 @@
         android:backgroundTint="#FF7F3A"
         android:ems="10"
         android:fontFamily="@font/quicksand"
-        android:hint="Email"
+        android:hint="@string/email_login"
         android:inputType="textEmailAddress"
         android:textColor="#FF7F3A"
         android:textColorHint="#FF7F3A"
@@ -68,7 +72,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_title" />
+        app:layout_constraintTop_toBottomOf="@+id/login_title"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/login_pass"
@@ -78,7 +84,7 @@
         android:backgroundTint="#FF7F3A"
         android:ems="10"
         android:fontFamily="@font/quicksand"
-        android:hint="Clave"
+        android:hint="@string/clave_login"
         android:inputType="textPassword"
         android:textColor="#FF7F3A"
         android:textColorHint="#FF7F3A"
@@ -86,6 +92,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_email" />
+        app:layout_constraintTop_toBottomOf="@+id/login_email"
+        tools:ignore="TextContrastCheck"
+        android:autofillHints="" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

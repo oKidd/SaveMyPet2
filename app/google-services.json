@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "589061403057",
+    "project_id": "savemypets2",
+    "storage_bucket": "savemypets2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589061403057:android:4a0505aa06fb5499258d90",
+        "android_client_info": {
+          "package_name": "com.savemypet.savemypet2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589061403057-2lbbejkplnh4ark24495tbudfjkbk1rn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.savemypet.savemypet2",
+            "certificate_hash": "b008f9f10cba4b1b3e62b5dda55903d900bcc5d8"
+          }
+        },
+        {
+          "client_id": "589061403057-os05o42gde6kdf9dqjt17rfsuus0a7g7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZCUOfpOscVB99Yt3PJM32z91fWqrIPpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589061403057-os05o42gde6kdf9dqjt17rfsuus0a7g7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

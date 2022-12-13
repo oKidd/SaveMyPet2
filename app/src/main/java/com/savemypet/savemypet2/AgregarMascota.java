@@ -90,14 +90,24 @@ public class AgregarMascota extends AppCompatActivity {
                 break;
         }
 
+        if (!nombre.isEmpty()){
+            Mascota pet = new Mascota();
+            pet.setId(id);
+            pet.setNombre(nombre);
+            pet.setEspecie(es);
 
-        Mascota pet = new Mascota();
-        pet.setId(id);
-        pet.setNombre(nombre);
-        pet.setEspecie(es);
+            databaseReference.child("Mascota").child(pet.getId()).setValue(pet);
+            Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+            finish();
+            Intent iHome = new Intent(AgregarMascota.this, Home.class);
+            startActivity(iHome);
+        }
 
-        databaseReference.child("Mascota").child(pet.getId()).setValue(pet);
-        Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+    public void irAHome(View v){
         finish();
         Intent iHome = new Intent(AgregarMascota.this, Home.class);
         startActivity(iHome);
@@ -105,11 +115,8 @@ public class AgregarMascota extends AppCompatActivity {
 
     }
 
-    public void irAHome(View v){
-
-        Intent iHome = new Intent(AgregarMascota.this, Home.class);
-        startActivity(iHome);
-        finish();
-
+    public void irAPerfil(View v){
+        Intent iPerfil = new Intent(AgregarMascota.this, PerfilUsuario.class);
+        startActivity(iPerfil);
     }
 }

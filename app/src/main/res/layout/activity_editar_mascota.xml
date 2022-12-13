@@ -230,6 +230,7 @@
         android:layout_height="60dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="@string/boton_opciones"
+        android:onClick="irAMascota"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

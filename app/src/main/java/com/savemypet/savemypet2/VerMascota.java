@@ -45,4 +45,14 @@ public class VerMascota extends AppCompatActivity {
         Intent iperfil = new Intent(VerMascota.this, PerfilUsuario.class);
         startActivity(iperfil);
     }
+
+    public void editarMascota(View v){
+        Intent iEditarMascota = new Intent(VerMascota.this, EditarMascota.class);
+        startActivity(iEditarMascota);
+    }
+
+    public void addMascota(View v){
+        Intent iadd = new Intent(VerMascota.this, AgregarMascota.class);
+        startActivity(iadd);
+    }
 }

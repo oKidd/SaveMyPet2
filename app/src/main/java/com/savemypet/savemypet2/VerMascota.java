@@ -25,7 +25,7 @@ public class VerMascota extends AppCompatActivity {
             nombreMascota.setText(nombre);
             temperaturaMascota.setText(String.valueOf(temp));
             humedadMascota.setText(String.valueOf(humedad));
-            estadoM.setText(String.valueOf(estado));
+            estadoM.setText(estado);
         }
     }
 }

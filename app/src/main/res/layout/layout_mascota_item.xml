@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/pets" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvNombreMascota"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginStart="156dp"

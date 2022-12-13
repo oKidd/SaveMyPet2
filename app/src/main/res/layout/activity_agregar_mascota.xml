@@ -10,17 +10,19 @@
         android:id="@+id/addpet_button"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="535dp"
+        android:layout_marginBottom="126dp"
         android:backgroundTint="#FF7F3A"
         android:fontFamily="@font/quicksand"
         android:text="@string/registrarse_title"
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addpet_especie"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"
         tools:text="Agregar Mascota" />
 
@@ -141,10 +143,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="644dp"
+        android:layout_marginBottom="31dp"
         android:clickable="true"
         android:contentDescription="@string/boton_agregar"
         android:focusable="true"
         app:backgroundTint="#FF7F3A"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/divider_down"
@@ -186,6 +190,7 @@
         android:backgroundTint="#FF7F3A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addpet_name" />
+        app:layout_constraintTop_toBottomOf="@+id/addpet_name"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

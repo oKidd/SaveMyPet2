@@ -2,7 +2,9 @@ package com.savemypet.savemypet2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class VerMascota extends AppCompatActivity {
@@ -31,5 +33,16 @@ public class VerMascota extends AppCompatActivity {
             humedadMascota.setText(String.valueOf(humedad)+" %");
             estadoM.setText(estado);
         }
+    }
+
+    public void irAHome(View v){
+        finish();
+        Intent ihome = new Intent(VerMascota.this, Home.class);
+        startActivity(ihome);
+    }
+    public void irAPerfil(View v){
+        finish();
+        Intent iperfil = new Intent(VerMascota.this, PerfilUsuario.class);
+        startActivity(iperfil);
     }
 }

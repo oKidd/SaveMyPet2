@@ -13,7 +13,12 @@
         android:layout_marginTop="25dp"
         android:backgroundTint="#FF7F3A"
         android:fontFamily="@font/quicksand"
+<<<<<<< HEAD
         android:text="@string/editar_perfil"
+=======
+        android:onClick="modificarPerfil"
+        android:text="@string/registrarse_title"
+>>>>>>> 5d4c9791b83661c269595e9f5576812ed5d8e995
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="100dp"

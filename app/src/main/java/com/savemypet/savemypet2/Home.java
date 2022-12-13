@@ -89,6 +89,9 @@ public class Home extends AppCompatActivity {
         FirebaseUser user = fbAuth.getCurrentUser();
         if (user != null) {
             fbAuth.signOut();
+            finish();
+            Intent imain = new Intent(Home.this, MainActivity.class);
+            startActivity(imain);
             Toast.makeText(this, "Sesion Finalizada", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Debe iniciar sesion", Toast.LENGTH_SHORT).show();

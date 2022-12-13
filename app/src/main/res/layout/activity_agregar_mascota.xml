@@ -6,6 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".AgregarMascota">
 
+    <Button
+        android:id="@+id/addpet_button"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="180dp"
+        android:backgroundTint="#FF7F3A"
+        android:fontFamily="@font/quicksand"
+        android:text="@string/registrarse_title"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addpet_especie"
+        tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck"
+        tools:text="Agregar Mascota" />
+
+    <EditText
+        android:id="@+id/addpet_name"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:autofillHints=""
+        android:backgroundTint="#FF7F3A"
+        android:ems="10"
+        android:fontFamily="@font/quicksand"
+        android:hint="Nombre"
+        android:inputType="text"
+        android:textColor="#FF7F3A"
+        android:textColorHint="#FF7F3A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addpet_logo"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/addpet_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="editpet_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_up"
+        app:srcCompat="@drawable/pets" />
+
     <View
         android:id="@+id/menu_up"
         android:layout_width="wrap_content"
@@ -127,5 +177,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/menu"
         tools:ignore="ImageContrastCheck" />
+
+    <Spinner
+        android:id="@+id/addpet_especie"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#FF7F3A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addpet_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

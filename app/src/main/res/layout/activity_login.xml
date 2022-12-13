@@ -39,7 +39,8 @@
         app:layout_constraintHorizontal_bias="0.392"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="TextContrastCheck"
+        tools:text="Iniciar\n    Sesion" />
 
     <ImageView
         android:id="@+id/login_logo"

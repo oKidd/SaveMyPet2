@@ -9,7 +9,7 @@ public class EspecieController {
 
 
     //CREATE --ADD
-    public static String addEspecie(String id, String especie, int minTemp, int maxTemp, int minHumedad, int maxHumedad, int hluz){
+    public static String addEspecie(String id, String especie, int minTemp, int maxTemp, int minHumedad, int maxHumedad, float hluz){
 
         try {
             Especie e = new Especie(id, especie, minTemp, maxTemp, minHumedad, maxHumedad,hluz);
@@ -45,7 +45,7 @@ public class EspecieController {
 
             addEspecie("5","Canarios", 27, 32, 40,70,13);
             addEspecie("6","Tucanes", 10, 35, 60,85,12);
-            addEspecie("7","Iguanas", 20, 25, 65,75,12);
+            addEspecie("7","Iguanas", 20, 25, 65,75,0.25f);
             addEspecie("8","Serpiente", 22, 30, 60,90,12);
 
             addEspecie("9","Tortuga", 25, 35, 40,50,11);

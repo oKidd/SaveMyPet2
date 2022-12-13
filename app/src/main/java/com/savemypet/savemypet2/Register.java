@@ -96,6 +96,11 @@ public class Register extends AppCompatActivity {
         });
     }
 
+    public void irALogin(View v){
+        finish();
+        Intent iLogin = new Intent(Register.this, Login.class);
+}
+
 
 
 }

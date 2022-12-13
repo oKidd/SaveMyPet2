@@ -7,11 +7,11 @@ public class Especie {
     int maxTemperatura;
     int minHumedad;
     int maxHumedad;
-    int horasLuz;
+    float horasLuz;
 
     public Especie(){}
 
-    public Especie(String id, String especie, int minTemperatura, int maxTemperatura, int minHumedad, int maxHumedad, int horasLuz) {
+    public Especie(String id, String especie, int minTemperatura, int maxTemperatura, int minHumedad, int maxHumedad, float horasLuz) {
         this.id = id;
         this.especie = especie;
         this.minTemperatura = minTemperatura;
@@ -69,11 +69,11 @@ public class Especie {
         this.maxHumedad = maxHumedad;
     }
 
-    public int getHorasLuz() {
+    public float getHorasLuz() {
         return horasLuz;
     }
 
-    public void setHorasLuz(int horasLuz) {
+    public void setHorasLuz(float horasLuz) {
         this.horasLuz = horasLuz;
     }
 }

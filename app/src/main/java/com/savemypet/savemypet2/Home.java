@@ -8,8 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,8 +28,10 @@ import java.util.List;
 
 public class Home extends AppCompatActivity {
     private ArrayList<Mascota> listaMascota;
+    FirebaseAuth fbAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+
     MascotaAdapter adapter;
 
     Mascota mascotaSeleccionada;
@@ -37,6 +42,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         lvHome = findViewById(R.id.home_lista);
+        fbAuth = FirebaseAuth.getInstance();
         listaMascota = new ArrayList<>();
         iniciarFirebase();
         listarMascotas();
@@ -77,5 +83,15 @@ public class Home extends AppCompatActivity {
         finish();
         Intent iAddM = new Intent(Home.this, AgregarMascota.class);
         startActivity(iAddM);
+    }
+
+    public void cerrarSesion(View v){
+        FirebaseUser user = fbAuth.getCurrentUser();
+        if (user != null) {
+            fbAuth.signOut();
+            Toast.makeText(this, "Sesion Finalizada", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Debe iniciar sesion", Toast.LENGTH_SHORT).show();
+        }
     }
 }

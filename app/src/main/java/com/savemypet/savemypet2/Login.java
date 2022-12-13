@@ -59,4 +59,10 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
+    public void irARegistro(View v){
+        finish();
+        Intent iRegister = new Intent(Login.this, Register.class);
+        startActivity(iRegister);
+    }
 }

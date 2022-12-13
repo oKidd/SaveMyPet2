@@ -106,6 +106,7 @@
         android:layout_marginTop="672dp"
         android:layout_marginEnd="119dp"
         android:layout_marginBottom="215dp"
+        android:onClick="irARegistro"
         android:text="No tengo cuenta"
         android:textColor="#FF7F3A"
         android:textSize="20sp"

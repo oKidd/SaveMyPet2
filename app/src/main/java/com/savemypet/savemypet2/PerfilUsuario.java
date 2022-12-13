@@ -35,4 +35,9 @@ public class PerfilUsuario extends AppCompatActivity {
         Intent iAddM = new Intent(PerfilUsuario.this, AgregarMascota.class);
         startActivity(iAddM);
     }
+
+    public void modificarPerfil(View v){
+        Intent iEditarPerfil = new Intent(PerfilUsuario.this, EditarUsuario.class);
+        startActivity(iEditarPerfil);
+    }
 }

@@ -14,6 +14,10 @@ public class VerMascota extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vermascota);
+        nombreMascota = findViewById(R.id.nombreMascota);
+        temperaturaMascota = findViewById(R.id.pet_temptext);
+        humedadMascota = findViewById(R.id.pet_humtext);
+        estadoM = findViewById(R.id.pet_estadotext) ;
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null){
@@ -22,9 +26,9 @@ public class VerMascota extends AppCompatActivity {
             humedad = bundle.getInt("humedad");
             estado = bundle.getString("estado");
 
-            nombreMascota.setText(nombre);
-            temperaturaMascota.setText(String.valueOf(temp));
-            humedadMascota.setText(String.valueOf(humedad));
+            nombreMascota.setText(nombre.toString());
+            temperaturaMascota.setText(String.valueOf(temp)+ "C°");
+            humedadMascota.setText(String.valueOf(humedad)+" %");
             estadoM.setText(estado);
         }
     }

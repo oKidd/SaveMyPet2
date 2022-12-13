@@ -30,7 +30,12 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
         }
         Mascota mascota = getItem(position);
         TextView tvNombreMascota = listitemView.findViewById(R.id.tvNombreMascota);
+        TextView tvTemperatura = listitemView.findViewById(R.id.tvTemperaturaItem);
+        TextView tvHumedad = listitemView.findViewById(R.id.tvHumedadItem);
+
         tvNombreMascota.setText(mascota.getNombre());
+        tvTemperatura.setText(String.valueOf(mascota.getEspecie().getMinTemperatura())+" C°");
+        tvHumedad.setText(String.valueOf(mascota.getEspecie().getMinHumedad())+" %");
         /*
         String nombre = MascotaController.findAll().get(position).getNombre();
 

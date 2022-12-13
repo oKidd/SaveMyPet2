@@ -98,12 +98,18 @@ public class AgregarMascota extends AppCompatActivity {
 
         databaseReference.child("Mascota").child(pet.getId()).setValue(pet);
         Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
+        finish();
+        Intent iHome = new Intent(AgregarMascota.this, Home.class);
+        startActivity(iHome);
+
 
     }
 
     public void irAHome(View v){
-        finish();
+
         Intent iHome = new Intent(AgregarMascota.this, Home.class);
         startActivity(iHome);
+        finish();
+
     }
 }

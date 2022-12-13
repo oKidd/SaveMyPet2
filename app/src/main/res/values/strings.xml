@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SaveMyPet2</string>
     <string name="mis_mascotas">Mis Mascotas</string>
-    <string name="boton_agregar">Boton agregar</string>
+    <string name="boton_agregar">Agregar</string>
     <string name="boton_editar">boton editar</string>
     <string name="boton_notificaciones">boton notificaciones</string>
     <string name="boton_opciones">boton opciones</string>

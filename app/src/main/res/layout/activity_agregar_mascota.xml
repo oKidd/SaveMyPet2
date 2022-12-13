@@ -14,7 +14,8 @@
         android:layout_marginBottom="126dp"
         android:backgroundTint="#FF7F3A"
         android:fontFamily="@font/quicksand"
-        android:text="@string/registrarse_title"
+        android:onClick="addMascota"
+        android:text="@string/boton_agregar"
         android:textAllCaps="false"
         android:textSize="24sp"
         app:cornerRadius="100dp"
@@ -150,9 +151,10 @@
         app:backgroundTint="#FF7F3A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="@+id/divider_down"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928"
         app:srcCompat="@drawable/plus_math"
         tools:ignore="ImageContrastCheck" />
 
@@ -179,7 +181,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/menu"
+        app:srcCompat="@drawable/configuraciones"
         tools:ignore="ImageContrastCheck" />
 
     <Spinner

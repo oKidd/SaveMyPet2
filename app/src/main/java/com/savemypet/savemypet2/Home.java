@@ -16,12 +16,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.savemypet.savemypet2.Adapters.MascotaAdapter;
+import com.savemypet.savemypet2.Controller.EspecieController;
+import com.savemypet.savemypet2.clases.Especie;
 import com.savemypet.savemypet2.clases.Mascota;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Home extends AppCompatActivity {
-    private ArrayList<Mascota> listaMascota = new ArrayList<>();
+    private ArrayList<Mascota> listaMascota;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     MascotaAdapter adapter;
@@ -34,6 +37,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         lvHome = findViewById(R.id.home_lista);
+        listaMascota = new ArrayList<>();
         iniciarFirebase();
         listarMascotas();
     }
@@ -51,7 +55,7 @@ public class Home extends AppCompatActivity {
                     Mascota a = item.getValue(Mascota.class);
                     listaMascota.add(a);
                 }
-                adapter = new MascotaAdapter(Home.this, android.R.layout.simple_list_item_1, listaMascota);
+                MascotaAdapter adapter = new MascotaAdapter(Home.this, listaMascota);
                 lvHome.setAdapter(adapter);
             }
 

@@ -1,6 +1,7 @@
 package com.savemypet.savemypet2.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,6 +53,11 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
             public void onDataChange(DataSnapshot dataSnapshotT) {
                 String temp = dataSnapshotT.getValue().toString();
                 tvTemperatura.setText(temp+" C°");
+                if (Integer.valueOf(temp) < mascota.getEspecie().getMinTemperatura() || Integer.valueOf(temp) > mascota.getEspecie().getMaxTemperatura()){
+                    tvTemperatura.setTextColor(Color.RED);
+                } else {
+                    tvTemperatura.setTextColor(Color.GREEN);
+                }
             }
             @Override
             public void onCancelled(DatabaseError errorT) {
@@ -68,6 +74,11 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
             public void onDataChange(DataSnapshot dataSnapshotH) {
                 String humedad = dataSnapshotH.getValue().toString();
                 tvHumedad.setText(humedad+" %");
+                if (Integer.valueOf(humedad) < mascota.getEspecie().getMinHumedad() || Integer.valueOf(humedad) > mascota.getEspecie().getMaxHumedad()){
+                    tvTemperatura.setTextColor(Color.RED);
+                } else {
+                    tvTemperatura.setTextColor(Color.GREEN);
+                }
             }
             @Override
             public void onCancelled(DatabaseError errorH) {

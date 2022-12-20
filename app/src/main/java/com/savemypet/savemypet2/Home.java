@@ -56,6 +56,7 @@ public class Home extends AppCompatActivity {
                 intent.putExtra("nombre", mascotaSeleccionada.getNombre());
                 intent.putExtra("estado", "Despierto");
                 intent.putExtra("numMascotas", listaMascota.size());
+                intent.putExtra("especie", mascotaSeleccionada.getEspecie().getEspecie());
 
                 startActivity(intent);
             }

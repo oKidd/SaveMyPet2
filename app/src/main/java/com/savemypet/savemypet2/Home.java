@@ -54,8 +54,6 @@ public class Home extends AppCompatActivity {
                 mascotaSeleccionada = (Mascota) adapterView.getItemAtPosition(i);
 
                 intent.putExtra("nombre", mascotaSeleccionada.getNombre());
-                intent.putExtra("temp", mascotaSeleccionada.getEspecie().getMinTemperatura());
-                intent.putExtra("humedad", mascotaSeleccionada.getEspecie().getMinHumedad());
                 intent.putExtra("estado", "Despierto");
 
                 startActivity(intent);

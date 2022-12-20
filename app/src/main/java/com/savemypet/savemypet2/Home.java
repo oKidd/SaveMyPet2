@@ -55,6 +55,7 @@ public class Home extends AppCompatActivity {
 
                 intent.putExtra("nombre", mascotaSeleccionada.getNombre());
                 intent.putExtra("estado", "Despierto");
+                intent.putExtra("numMascotas", listaMascota.size());
 
                 startActivity(intent);
             }
@@ -92,6 +93,7 @@ public class Home extends AppCompatActivity {
     public void addMascota(View v){
         finish();
         Intent iAddM = new Intent(Home.this, AgregarMascota.class);
+        iAddM.putExtra("numMascotas", listaMascota.size());
         startActivity(iAddM);
     }
 

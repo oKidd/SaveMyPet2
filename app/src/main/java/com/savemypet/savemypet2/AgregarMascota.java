@@ -27,6 +27,7 @@ import com.savemypet.savemypet2.clases.Usuario;
 import java.util.UUID;
 
 public class AgregarMascota extends AppCompatActivity {
+    int numMascotas;
     FirebaseAuth fbAuth;
     FirebaseUser userAuth;
     Spinner spnEspecie;
@@ -44,7 +45,10 @@ public class AgregarMascota extends AppCompatActivity {
         String[] especie = {"Hurones", "Chinchillas","Guacamayas","Loros", "Canarios","Tucanes", "Iguanas","Serpiente","Tortuga","Conejos enanos", "Erizos de tierra","Camaleones"};
         ArrayAdapter<String> adapterE = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, especie);
         spnEspecie.setAdapter(adapterE);
-
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            numMascotas = bundle.getInt("numMascotas");
+        }
     }
 
     private void iniciarFirebase() {
@@ -131,6 +135,7 @@ public class AgregarMascota extends AppCompatActivity {
 
     public void irAPerfil(View v){
         Intent iPerfil = new Intent(AgregarMascota.this, PerfilUsuario.class);
+        iPerfil.putExtra("numMascotas", numMascotas);
         startActivity(iPerfil);
     }
 }

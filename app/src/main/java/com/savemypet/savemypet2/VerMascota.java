@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 public class VerMascota extends AppCompatActivity {
     String nombre;
     String estado;
+    int numMascotas;
     TextView nombreMascota, temperaturaMascota, humedadMascota, estadoM;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class VerMascota extends AppCompatActivity {
         if (bundle != null){
             nombre = bundle.getString("nombre");
             estado = bundle.getString("estado");
-
+            numMascotas  = bundle.getInt("numMascotas");
             nombreMascota.setText(nombre.toString());
             estadoM.setText(estado);
 
@@ -78,6 +79,7 @@ public class VerMascota extends AppCompatActivity {
     public void irAPerfil(View v){
         finish();
         Intent iperfil = new Intent(VerMascota.this, PerfilUsuario.class);
+        iperfil.putExtra("numMascotas", numMascotas);
         startActivity(iperfil);
     }
 

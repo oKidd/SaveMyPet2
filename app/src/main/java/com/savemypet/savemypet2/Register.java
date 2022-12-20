@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -24,13 +26,15 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
     private EditText etRegUsuario, etRegFono, etRegCorreo, etRegPass;
     FirebaseAuth fbAuth;
-    FirebaseFirestore fbFirestore;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        fbFirestore = FirebaseFirestore.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
         fbAuth = FirebaseAuth.getInstance();
 
         etRegCorreo = findViewById(R.id.register_email);
@@ -71,7 +75,7 @@ public class Register extends AppCompatActivity {
                 map.put("password",pass);
                 map.put("fono",fono);
 
-                fbFirestore.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                databaseReference.child("user").child(id).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         finish();

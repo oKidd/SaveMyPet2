@@ -1,6 +1,7 @@
 package com.savemypet.savemypet2.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.savemypet.savemypet2.Controller.MascotaController;
 import com.savemypet.savemypet2.R;
 import com.savemypet.savemypet2.clases.Mascota;
@@ -16,6 +22,10 @@ import com.savemypet.savemypet2.clases.Mascota;
 import java.util.ArrayList;
 
 public class MascotaAdapter extends ArrayAdapter<Mascota> {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference refTemperatura = database.getReference("temperatura");
+    DatabaseReference refHumedad = database.getReference("humedad");
 
     public MascotaAdapter(Context context, ArrayList<Mascota> listaMascota) {
         super(context, 0, listaMascota);
@@ -25,6 +35,11 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View listitemView = convertView;
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference refTemperatura = database.getReference("temperatura");
+        DatabaseReference refHumedad = database.getReference("humedad");
+
         if (listitemView == null) {
             listitemView = LayoutInflater.from(getContext()).inflate(R.layout.layout_mascota_item, parent, false);
         }
@@ -34,8 +49,36 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
         TextView tvHumedad = listitemView.findViewById(R.id.tvHumedadItem);
 
         tvNombreMascota.setText(mascota.getNombre());
-        tvTemperatura.setText(String.valueOf(mascota.getEspecie().getMinTemperatura())+" C°");
-        tvHumedad.setText(String.valueOf(mascota.getEspecie().getMinHumedad())+" %");
+
+        //Cambiar temperatura
+
+        refTemperatura.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshotT) {
+                String temp = dataSnapshotT.getValue().toString();
+                tvTemperatura.setText(temp+" C°");
+            }
+            @Override
+            public void onCancelled(DatabaseError errorT) {
+                // Failed to read value
+                Log.w("TAG", "Failed to read value.", errorT.toException());
+            }
+        });
+
+
+        //CAmbiar Humedad
+
+        refHumedad.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshotH) {
+                String humedad = dataSnapshotH.getValue().toString();
+                tvHumedad.setText(humedad+" %");
+            }
+            @Override
+            public void onCancelled(DatabaseError errorH) {
+                Log.w("TAG", "Failed to read value.", errorH.toException());
+            }
+        });
         /*
         String nombre = MascotaController.findAll().get(position).getNombre();
 
@@ -43,10 +86,7 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
         View item = inflater.inflate(R.layout.layout_mascota_item,null);
 
         TextView tvNombreMascota = item.findViewById(R.id.tvNombreMascota);
-
-
-
-*/
+        */
 
         return listitemView;
     }

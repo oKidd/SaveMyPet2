@@ -65,8 +65,6 @@ public class Home extends AppCompatActivity {
     }
 
     private void listarMascotas() {
-
-
         databaseReference.child("Mascota").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -86,6 +84,8 @@ public class Home extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 

@@ -30,6 +30,7 @@ import java.util.List;
 public class Home extends AppCompatActivity {
     private ArrayList<Mascota> listaMascota;
     FirebaseAuth fbAuth;
+    FirebaseUser userAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
 
@@ -44,6 +45,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         lvHome = findViewById(R.id.home_lista);
         fbAuth = FirebaseAuth.getInstance();
+        userAuth = fbAuth.getCurrentUser();
         listaMascota = new ArrayList<>();
         iniciarFirebase();
         listarMascotas();
@@ -65,7 +67,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void listarMascotas() {
-        databaseReference.child("Mascota").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Mascotas").orderByChild("idUsuario").equalTo(userAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 listaMascota.clear();

@@ -110,6 +110,7 @@ public class Home extends AppCompatActivity {
 
     public void irAPerfil(View v){
         Intent iPerfil = new Intent(Home.this, PerfilUsuario.class);
+        iPerfil.putExtra("numMascotas", listaMascota.size());
         startActivity(iPerfil);
     }
 

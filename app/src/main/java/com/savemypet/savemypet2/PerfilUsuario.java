@@ -17,12 +17,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.savemypet.savemypet2.clases.Mascota;
 import com.savemypet.savemypet2.clases.Usuario;
 
+import java.util.ArrayList;
+
 public class PerfilUsuario extends AppCompatActivity {
+    int numMascotas;
     FirebaseAuth fbAuth;
     FirebaseUser userAuth;
-    TextView tvusername, tvFono, tvEmail;
+    TextView tvusername, tvFono, tvEmail, tvnumMascotas;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference refUsuario = database.getReference("user");
     @Override
@@ -32,10 +36,14 @@ public class PerfilUsuario extends AppCompatActivity {
         tvusername = findViewById(R.id.profile_name);
         tvFono = findViewById(R.id.profile_phone);
         tvEmail = findViewById(R.id.profile_email2);
+        tvnumMascotas = findViewById(R.id.profile_pets_number);
         fbAuth = FirebaseAuth.getInstance();
         userAuth = fbAuth.getCurrentUser();
 
-
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            numMascotas = bundle.getInt("numMascotas");
+        }
         refUsuario.child(userAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -43,6 +51,7 @@ public class PerfilUsuario extends AppCompatActivity {
                     tvusername.setText(snapshot.child("name").getValue().toString());
                     tvEmail.setText(snapshot.child("email").getValue().toString());
                     tvFono.setText(snapshot.child("fono").getValue().toString());
+                    tvnumMascotas.setText(String.valueOf(numMascotas));
                 }
             }
 

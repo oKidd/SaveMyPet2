@@ -55,11 +55,14 @@ public class VerMascota extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshotT) {
                     String temp = dataSnapshotT.getValue().toString();
                     temperaturaMascota.setText(temp+" C°");
+                    /*
                     if (Integer.valueOf(temp) < esp.getMinTemperatura() || Integer.valueOf(temp) > esp.getMaxTemperatura()){
                         temperaturaMascota.setTextColor(Color.RED);
                     } else {
                         temperaturaMascota.setTextColor(Color.GREEN);
                     }
+
+                     */
                 }
                 @Override
                 public void onCancelled(DatabaseError errorT) {
@@ -76,11 +79,14 @@ public class VerMascota extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshotH) {
                     String humedad = dataSnapshotH.getValue().toString();
                     humedadMascota.setText(humedad+" %");
+                    /*
                     if (Integer.valueOf(humedad) < esp.getMinHumedad() || Integer.valueOf(humedad) > esp.getMaxHumedad()){
                         humedadMascota.setTextColor(Color.RED);
                     } else {
                         humedadMascota.setTextColor(Color.GREEN);
                     }
+
+                     */
                 }
                 @Override
                 public void onCancelled(DatabaseError errorH) {

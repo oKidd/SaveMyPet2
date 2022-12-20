@@ -23,14 +23,9 @@ import java.util.ArrayList;
 
 public class MascotaAdapter extends ArrayAdapter<Mascota> {
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference refTemperatura = database.getReference("temperatura");
-    DatabaseReference refHumedad = database.getReference("humedad");
-
     public MascotaAdapter(Context context, ArrayList<Mascota> listaMascota) {
         super(context, 0, listaMascota);
     }
-
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -79,14 +74,6 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
                 Log.w("TAG", "Failed to read value.", errorH.toException());
             }
         });
-        /*
-        String nombre = MascotaController.findAll().get(position).getNombre();
-
-        LayoutInflater inflater = AppCompatActivity.getLayoutInflater();
-        View item = inflater.inflate(R.layout.layout_mascota_item,null);
-
-        TextView tvNombreMascota = item.findViewById(R.id.tvNombreMascota);
-        */
 
         return listitemView;
     }

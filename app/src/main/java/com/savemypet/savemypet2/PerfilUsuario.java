@@ -51,10 +51,6 @@ public class PerfilUsuario extends AppCompatActivity {
 
             }
         });
-
-        //tvusername.setText(user.getUid());
-       // tvEmail.setText(user.getEmail());
-        //tvFono.setText(user.g);
     }
 
    public void irAHome(View v){

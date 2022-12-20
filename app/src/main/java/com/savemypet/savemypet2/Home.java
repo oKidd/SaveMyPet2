@@ -33,9 +33,6 @@ public class Home extends AppCompatActivity {
     FirebaseUser userAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
-    MascotaAdapter adapter;
-
     Mascota mascotaSeleccionada;
 
     private ListView lvHome;
@@ -86,9 +83,6 @@ public class Home extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 
     private void iniciarFirebase() {

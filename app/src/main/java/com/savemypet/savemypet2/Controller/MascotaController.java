@@ -2,6 +2,7 @@ package com.savemypet.savemypet2.Controller;
 
 import com.savemypet.savemypet2.clases.Especie;
 import com.savemypet.savemypet2.clases.Mascota;
+import com.savemypet.savemypet2.clases.Usuario;
 
 import java.util.ArrayList;
 
@@ -10,10 +11,10 @@ public class MascotaController {
 
 
     //CREATE --ADD
-    public static String addAlumno(String id, String nombre, Especie especie){
+    public static String addAlumno(String id, String nombre, Especie especie, String idusuario){
 
         try {
-            Mascota m = new Mascota(id, nombre, especie);
+            Mascota m = new Mascota(id, nombre, especie, idusuario);
             listaMascotas.add(m);
             return "Mascota Agregado";
         }catch(Exception e){

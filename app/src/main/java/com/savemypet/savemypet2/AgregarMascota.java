@@ -1,5 +1,6 @@
 package com.savemypet.savemypet2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,15 +12,23 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.savemypet.savemypet2.Controller.EspecieController;
 import com.savemypet.savemypet2.clases.Especie;
 import com.savemypet.savemypet2.clases.Mascota;
+import com.savemypet.savemypet2.clases.Usuario;
 
 import java.util.UUID;
 
 public class AgregarMascota extends AppCompatActivity {
+    FirebaseAuth fbAuth;
+    FirebaseUser userAuth;
     Spinner spnEspecie;
     EditText etAddNombre;
     FirebaseDatabase firebaseDatabase;
@@ -43,6 +52,9 @@ public class AgregarMascota extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
+        fbAuth = FirebaseAuth.getInstance();
+        userAuth = fbAuth.getCurrentUser();
+
     }
 
     public void addMascota(View v){
@@ -50,6 +62,7 @@ public class AgregarMascota extends AppCompatActivity {
         String nombre = etAddNombre.getText().toString();
         String especie = spnEspecie.getSelectedItem().toString();
         Especie es = null;
+
 
         switch (especie){
             case "Hurones":
@@ -95,8 +108,9 @@ public class AgregarMascota extends AppCompatActivity {
             pet.setId(id);
             pet.setNombre(nombre);
             pet.setEspecie(es);
+            pet.setIdUsuario(userAuth.getUid());
 
-            databaseReference.child("Mascota").child(pet.getId()).setValue(pet);
+            databaseReference.child("Mascotas").child(pet.getId()).setValue(pet);
             Toast.makeText(this, "Ok", Toast.LENGTH_SHORT).show();
             finish();
             Intent iHome = new Intent(AgregarMascota.this, Home.class);

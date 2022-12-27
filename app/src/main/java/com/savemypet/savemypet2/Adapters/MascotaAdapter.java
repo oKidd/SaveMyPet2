@@ -53,11 +53,15 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
             public void onDataChange(DataSnapshot dataSnapshotT) {
                 String temp = dataSnapshotT.getValue().toString();
                 tvTemperatura.setText(temp+" C°");
-                if (Integer.valueOf(temp) < mascota.getEspecie().getMinTemperatura() || Integer.valueOf(temp) > mascota.getEspecie().getMaxTemperatura()){
+/*
+                if (Float.valueOf(temp) < (float) mascota.getEspecie().getMinTemperatura() || Float.valueOf(temp) > (float) mascota.getEspecie().getMaxTemperatura()){
                     tvTemperatura.setTextColor(Color.RED);
                 } else {
                     tvTemperatura.setTextColor(Color.GREEN);
                 }
+
+ */
+
             }
             @Override
             public void onCancelled(DatabaseError errorT) {
@@ -74,11 +78,15 @@ public class MascotaAdapter extends ArrayAdapter<Mascota> {
             public void onDataChange(DataSnapshot dataSnapshotH) {
                 String humedad = dataSnapshotH.getValue().toString();
                 tvHumedad.setText(humedad+" %");
-                if (Integer.valueOf(humedad) < mascota.getEspecie().getMinHumedad() || Integer.valueOf(humedad) > mascota.getEspecie().getMaxHumedad()){
+/*
+                if (Float.valueOf(humedad) < (float) mascota.getEspecie().getMinHumedad() || Float.valueOf(humedad) > (float) mascota.getEspecie().getMaxHumedad()){
                     tvTemperatura.setTextColor(Color.RED);
                 } else {
                     tvTemperatura.setTextColor(Color.GREEN);
                 }
+
+ */
+
             }
             @Override
             public void onCancelled(DatabaseError errorH) {
